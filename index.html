@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LuxeGrip Cattle Brand · Marcas de ganado en 3D</title>
+<meta name="description" content="Marcas de ganado forjadas a medida. Elegí el diseño, mirá la marcación en 3D y encargá tu hierro." />
+<meta name="theme-color" content="#0a0c0f" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-head" id="siteHead">
+  <a class="logo" href="#top" aria-label="LuxeGrip Cattle Brand">
+    <span class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M6 25V14a5 5 0 0 1 10 0v11" stroke-linecap="round" />
+        <path d="M16 25V9a4 4 0 0 1 8 0v16" stroke-linecap="round" opacity=".55" />
+        <path d="M4 28h24" stroke-linecap="round" opacity=".35" />
+      </svg>
+    </span>
+    <span class="logo-text"><b>LUXE</b>GRIP<small>cattle brand</small></span>
+  </a>
+  <nav class="site-nav" id="siteNav" aria-label="Secciones"></nav>
+  <a class="btn btn-accent btn-sm" href="#contacto" id="headCta">Cotizar mi marca</a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <section class="hero" id="hero">
+    <div class="viewer" id="viewer"></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="hero-copy">
+      <span class="eyebrow" id="heroEyebrow">LuxeGrip · Marcas de ganado en 3D</span>
+      <h1><span id="heroTitle">Tu marca,</span> <em id="heroAccent">forjada al rojo vivo</em></h1>
+      <p class="hero-sub" id="heroSub">Elegí el diseño, mirá la marcación en 3D y encargá tu hierro a medida.</p>
+      <ul class="specs" id="heroSpecs"></ul>
+    </div>
+
+    <aside class="panel" id="panel" aria-label="Catálogo de diseños">
+      <button class="sheet-grip" id="sheetGrip" type="button" aria-expanded="false" aria-controls="panelBody">
+        <span class="grip-line" aria-hidden="true"></span>
+        <span class="grip-label">Diseños</span>
+        <svg class="grip-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m6 15 6-6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div class="panel-body" id="panelBody">
+        <div class="panel-head">
+          <span class="eyebrow">Diseño del marcador</span>
+          <div class="design-info">
+            <strong id="designTag">JR</strong>
+            <span id="designName">Clásico</span>
+            <small id="designDesc">Toro + JR</small>
+          </div>
+        </div>
+        <div class="design-grid" id="designGrid" role="listbox" aria-label="Diseños disponibles"></div>
+        <button class="dg-upload" id="btnUpload" type="button">
+          <span class="up-plus" aria-hidden="true">+</span>
+          <span>Subir mi logo</span>
+        </button>
+        <input type="file" id="logoInput" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden />
+        <p class="panel-hint" id="panelHint">Subí tu logo y mirá cómo queda marcado. Se procesa en tu navegador.</p>
+        <div class="panel-actions">
+          <button class="ghost" id="btnApply" type="button">▶ Ver la marcación</button>
+          <a class="ghost ghost-accent" id="designCta" href="#contacto">Cotizar <span id="ctaTag">JR</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="toolbar" role="toolbar" aria-label="Controles del visor">
+      <button class="chip is-on" id="btnOrbit" type="button" disabled>⟳ 360°</button>
+      <button class="chip" id="btnPlay" type="button" disabled>▶ Reproducir</button>
+      <button class="chip" id="btnCapture" type="button" disabled>Captura</button>
+      <button class="chip" id="btnReset" type="button" disabled>Reset</button>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <section class="section" id="disenos">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Catálogo</span>
+        <h2>Un hierro para cada estancia</h2>
+        <p>Diseños probados en el campo. Todos se pueden pedir tal cual o adaptar con tu nombre,
+          tus iniciales o tu marca familiar.</p>
+      </div>
+      <div class="catalog" id="catalogGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="proceso">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Proceso</span>
+        <h2>Del dibujo al cuero</h2>
+        <p>Tres pasos, sin sorpresas: elegís, se forja y se prueba antes de entregarte la pieza.</p>
+      </div>
+      <ol class="steps" id="processList"></ol>
+    </div>
+  </section>
+
+  <section class="section" id="especificaciones">
+    <div class="wrap specs-wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Ficha técnica</span>
+        <h2>Hierro que aguanta el campo</h2>
+        <p>Placa de acero con el sello en relieve y un canto cerrado de 13 mm, el mismo de nuestro
+          modelo clásico.</p>
+      </div>
+      <dl class="spec-list" id="specList" data-reveal></dl>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contacto">
+    <div class="wrap contact-wrap">
+      <div class="contact-copy" data-reveal>
+        <span class="eyebrow">Contacto</span>
+        <h2 id="contactTitle">Encargá tu marca</h2>
+        <p id="contactText">Contanos qué diseño te gustó y para cuándo lo necesitás.</p>
+        <div class="contact-links">
+          <a id="contactMail" class="link-mail" href="#">hola@luxegrip.com</a>
+          <a id="contactWpp" class="link-wpp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" data-reveal>
+        <label>
+          <span>Tu nombre</span>
+          <input type="text" name="nombre" id="fieldName" placeholder="Nombre y apellido" required />
+        </label>
+        <label>
+          <span>Diseño de interés</span>
+          <select name="diseno" id="fieldDesign"></select>
+        </label>
+        <label>
+          <span>Mensaje</span>
+          <textarea name="mensaje" id="fieldMsg" rows="4" placeholder="Contanos cuántas piezas necesitás y para cuándo."></textarea>
+        </label>
+        <button class="btn btn-accent" type="submit">Enviar consulta</button>
+        <p class="form-note" id="formNote">Se abre tu cliente de correo con la consulta lista para enviar.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-wrap">
+    <span class="foot-brand"><b>LUXE</b>GRIP <small>Cattle Brand</small></span>
+    <span class="foot-note">Marcas de ganado forjadas a mano · © <span id="year">2026</span></span>
+  </div>
+</footer>
+
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <span class="eyebrow">Preparando la fragua</span>
+    <div class="bar"><i id="bar"></i></div>
+    <p id="loaderPct">0%</p>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
